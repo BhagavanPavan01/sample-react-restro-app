@@ -19,6 +19,22 @@ export const slides = [
 export const restaurentList = [
   // Your existing restaurant data remains the same
   {
+    name: "A2B - Adyar Ananda Bhavan",
+    cuisines: ["South Indian", "Desserts"],
+    avgRating: "4.2",
+    areaName: "Anna Nagar",
+    cloudinaryImageId: "sample_image_id",
+    sla: { slaString: "30 mins" },
+  },
+  {
+    name: "Domino's Pizza",
+    cuisines: ["Pizza", "Italian"],
+    avgRating: "4.1",
+    areaName: "T Nagar",
+    cloudinaryImageId: "sample_image_id2",
+    sla: { slaString: "25 mins" },
+  },
+  {
     name: "Burger King",
     image: "https://b.zmtcdn.com/data/pictures/chains/8/18138658/6352f382ab83cd6c458c3ad6c6fd1d60_featured_v2.jpg",
     cusines: ["Burger", "American", "Fast Food"],

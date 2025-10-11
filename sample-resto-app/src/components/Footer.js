@@ -8,10 +8,11 @@ const Footer = () => {
             <h2>Healthy Restaurant</h2>
             <p>Discover your favorite meals and order online easily!</p>
             <div className="footer-socials">
-              <a href="#"><i className="fab fa-facebook"></i></a>
-              <a href="#"><i className="fab fa-twitter"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
               <a href="#"><i className="fab fa-linkedin"></i></a>
+              <a href="#"><i className="fab fa-github"></i></a>
+              <a href="#"><i className="fab fa-twitter"></i></a>
+              <a href="#"><i className="fab fa-whatsapp"></i></a>
+
             </div>
           </div>
 

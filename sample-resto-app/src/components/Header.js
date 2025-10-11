@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { searchText } from './SearchBar';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [searchTextInput, setSearchText] = useState();
+
+
 
   return (
     <div className="header">
@@ -15,13 +19,21 @@ const Header = () => {
             <span className="logo-text">Food Park</span>
           </div>
         </a>
+        
+        {/* <div>
+          <input type='search' placeholder='Search' value={searchTextInput} onChange={(e) => {
+            setSearchText(e.target.value);
+          }}>
+
+          </input>
+        </div> */}
 
         <div className={`nav-items ${isMenuOpen ? 'active' : ''}`}>
           <ul>
             <a href="#Home" ><li>Home</li></a>
-            <a href="#About" ><li>About</li></a>
             <a href="#Menu" ><li>Menu</li></a>
             <a href="#Offers" ><li>Offers</li></a>
+            <a href="#About" ><li>About</li></a>
             <a href="#Contact" ><li>Contact</li></a>
             <a href="/" > <li className="cart-item">
               <i className="fas fa-shopping-cart"></i>
