@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { searchText } from './SearchBar';
+import foodpark from '../assets/img/foodpark.jpg';
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const [searchTextInput, setSearchText] = useState();
@@ -12,7 +14,7 @@ const Header = () => {
         <a href="/" className="logo">
           <div className="logo-container">
             <img
-              src="https://graphicdesigneye.com/images/food-logo-design.jpg"
+              src={foodpark}
               alt="Food Park Logo"
               className="logo-image"
             />

@@ -23,7 +23,7 @@
 
 
 const FilterButtons = ({ onFilter }) => {
-  const filters = ["All", "South Indian", "Desserts", "Pizza", "Chinese"];
+  const filters = ["All", "South Indian", "Desserts", "Pizza", "Healthy"];
 
   return (
     <div className="filter-buttons">

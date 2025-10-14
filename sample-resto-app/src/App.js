@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
 import './App.css';
+import './Shimmer.css';
 import SpecialOffers from "./components/SpecialOffers"
 import FeaturedCategories from "./components/FeaturedCategories";
 import Hero from "./components/Hero";

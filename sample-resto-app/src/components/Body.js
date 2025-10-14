@@ -8,6 +8,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState(restaurentList);
   const [searchText, setSearchText] = useState("");
+  const [loading, setLoading] = useState(true);
 
   // ✅ Search handler
   const handleSearch = (text) => {
@@ -29,8 +30,8 @@ const Body = () => {
 
   async function getRestaurants() {
     try {
+      setLoading(true); // start shimmer
 
-      // This is Swiggy API
       const data = await fetch(
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.08950&lng=80.27390&page_type=DESKTOP_WEB_LISTING"
       );
@@ -49,6 +50,8 @@ const Body = () => {
     } catch (error) {
       console.error("Error fetching restaurants:", error);
       setFilteredRestaurants(restaurentList);
+    } finally {
+      setLoading(false); // ✅ stop shimmer
     }
   }
 
@@ -66,9 +69,9 @@ const Body = () => {
     }
   };
 
-  // ✅ Render
-  return (restaurentList.length == 0) ? <Shimmer /> : (
-    <div className="body-section" id = "Menu">
+  // ✅ Render section
+  return (
+    <div className="body-section" id="Menu">
       <div className="container">
         <div className="body-header">
           <h2>Popular Restaurants</h2>
@@ -76,18 +79,25 @@ const Body = () => {
           <FilterButtons onFilter={handleFilter} />
         </div>
 
-        <div className="restaurant-list">
-          {Array.isArray(filteredRestaurants) &&
-            filteredRestaurants.map((restaurant, index) => (
-              <RestrauntCard key={index} resData={restaurant} />
-            ))}
-        </div>
+        {/* ✅ Show shimmer while loading */}
+        {loading ? (
+          <Shimmer />
+        ) : (
+          <>
+            <div className="restaurant-list">
+              {Array.isArray(filteredRestaurants) &&
+                filteredRestaurants.map((restaurant, index) => (
+                  <RestrauntCard key={index} resData={restaurant} />
+                ))}
+            </div>
 
-        {filteredRestaurants.length === 0 && (
-          <div className="no-results">
-            <h3>No restaurants found</h3>
-            <p>Try adjusting your search or filter.</p>
-          </div>
+            {filteredRestaurants.length === 0 && (
+              <div className="no-results">
+                <h3>No restaurants found</h3>
+                <p>Try adjusting your search or filter.</p>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

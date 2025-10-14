@@ -12,7 +12,8 @@ a {
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adjust based on your header height */
+  scroll-padding-top: 80px;
+  /* Adjust based on your header height */
 }
 
 /* Section spacing to account for fixed header */
@@ -53,7 +54,7 @@ body {
 /* Header Styles */
 .header {
   background: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   top: 0;
@@ -102,13 +103,13 @@ body {
   border: 3px solid #e74c3c;
   padding: 2px;
   background: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .logo-container:hover .logo-image {
   border-color: #c0392b;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transform: rotate(5deg);
 }
 
@@ -116,7 +117,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   color: #e74c3c;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   transition: color 0.3s ease;
 }
 
@@ -130,7 +131,7 @@ body {
     width: 50px;
     height: 50px;
   }
-  
+
   .logo-text {
     font-size: 1.5rem;
   }
@@ -140,12 +141,12 @@ body {
   .logo-container {
     gap: 0.5rem;
   }
-  
+
   .logo-image {
     width: 45px;
     height: 45px;
   }
-  
+
   .logo-text {
     font-size: 1.3rem;
   }
@@ -227,7 +228,7 @@ body {
   bottom: 10%;
   left: 5%;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   max-width: 500px;
 }
 
@@ -269,7 +270,7 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -302,7 +303,7 @@ body {
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
@@ -367,7 +368,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
   color: white;
   padding: 1rem;
 }
@@ -394,6 +395,9 @@ body {
 }
 
 /* Search Bar */
+/* ===== Body.js Component Styles ===== */
+
+/* Search Bar */
 .search-bar {
   display: flex;
   max-width: 500px;
@@ -401,7 +405,7 @@ body {
   background: white;
   border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-input {
@@ -449,18 +453,50 @@ body {
   color: white;
 }
 
-/* Restaurant List */
-.restaurent-list {
+/* Restaurant List Grid */
+.restaurant-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
 }
+
+/* Shimmer Loading */
+.shimmer {
+  background: linear-gradient(to right,
+      #eeeeee 0%,
+      #dddddd 50%,
+      #eeeeee 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  height: 200px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+/* ===== Your Existing CSS (Keep Below) ===== */
 
 .card {
   background: white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
@@ -484,7 +520,7 @@ body {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-weight: bold;
@@ -519,13 +555,6 @@ body {
 .order-btn:hover {
   background: #09a209;
 }
-
-.no-results {
-  text-align: center;
-  padding: 3rem;
-  color: #666;
-}
-
 
 .restaurant-card {
   background: #ffffff;
@@ -574,17 +603,11 @@ body {
   color: #999;
 }
 
-.restaurant-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 30px;
-}
-
 @media (max-width: 768px) {
   .restaurant-card h3 {
     font-size: 1.05rem;
   }
+
   .restaurant-img {
     height: 150px;
   }
@@ -594,14 +617,15 @@ body {
   .restaurant-card {
     border-radius: 12px;
   }
+
   .restaurant-img {
     height: 140px;
   }
+
   .restaurant-card h3 {
     font-size: 1rem;
   }
 }
-
 
 
 /* Testimonials */
@@ -627,7 +651,7 @@ body {
   background: #f8f9fa;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-header {
@@ -704,7 +728,7 @@ body {
 .app-image img {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Footer */
@@ -805,7 +829,7 @@ footer {
     left: 0;
     width: 100%;
     background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: none;
   }
 
