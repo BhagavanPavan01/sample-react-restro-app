@@ -1,50 +1,43 @@
 import { useState } from 'react';
-import { searchText } from './SearchBar';
+import { Link } from 'react-router-dom';
 import foodpark from '../assets/img/foodpark.jpg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [searchTextInput, setSearchText] = useState();
-
-
 
   return (
     <div className="header">
       <div className="container">
-        <a href="/" className="logo">
+        {/* Logo */}
+        <Link to="/" className="logo">
           <div className="logo-container">
-            <img
-              src={foodpark}
-              alt="Food Park Logo"
-              className="logo-image"
-            />
+            <img src={foodpark} alt="Food Park Logo" className="logo-image" />
             <span className="logo-text">Food Park</span>
           </div>
-        </a>
-        
-        {/* <div>
-          <input type='search' placeholder='Search' value={searchTextInput} onChange={(e) => {
-            setSearchText(e.target.value);
-          }}>
-
-          </input>
-        </div> */}
+        </Link>
 
         <div className={`nav-items ${isMenuOpen ? 'active' : ''}`}>
           <ul>
-            <a href="#Home" ><li>Home</li></a>
-            <a href="#Menu" ><li>Menu</li></a>
-            <a href="#Offers" ><li>Offers</li></a>
-            <a href="#About" ><li>About</li></a>
-            <a href="#Contact" ><li>Contact</li></a>
-            <a href="/" > <li className="cart-item">
-              <i className="fas fa-shopping-cart"></i>
-              Cart <span className="cart-count">0</span>
+            {/* Internal sections use regular anchor tags */}
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Menu">Menu</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Contact">Contact</a></li>
+
+            {/* Routes use Link components */}
+            <li><Link to="/Offers">Offers</Link></li>
+
+            {/* Cart */}
+            <li>
+              <Link to="/" className="cart-item">
+                <i className="fas fa-shopping-cart"></i>
+                Cart <span className="cart-count">0</span>
+              </Link>
             </li>
-            </a>
           </ul>
         </div>
 
+        {/* Mobile menu toggle */}
         <button
           className="mobile-menu-btn"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -55,6 +48,5 @@ const Header = () => {
     </div>
   );
 };
-
 
 export default Header;
