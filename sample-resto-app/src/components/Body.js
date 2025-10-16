@@ -71,7 +71,7 @@ const Body = () => {
 
   // ✅ Render section
   return (
-    <div className="body-section" id="Menu">
+    <div className="body-section">
       <div className="container">
         <div className="body-header">
           <h2>Popular Restaurants</h2>

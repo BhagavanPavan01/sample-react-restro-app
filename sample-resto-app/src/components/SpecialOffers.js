@@ -33,7 +33,7 @@ const SpecialOffers = () => {
   ];
 
   return (
-    <section className="special-offers" id="Offers">
+    <section className="special-offers">
       <div className="container">
         <h2>Special Offers</h2>
         <div className="offers-grid">

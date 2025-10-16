@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero-section" id = "Home">
+    <div className="hero-section">
       {slides.map((slide, index) => (
         <div
           key={index}

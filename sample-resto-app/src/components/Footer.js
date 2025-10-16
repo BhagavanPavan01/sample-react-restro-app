@@ -2,7 +2,7 @@
 const Footer = () => {
   return (
     <footer>
-      <div className="container" id="Contact">
+      <div className="container">
         <div className="footer-content">
           <div className="footer-section">
             <h2>Healthy Restaurant</h2>
@@ -19,11 +19,11 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Quick Links</h3>
             <div className="footer-links">
-              <a href="#home">Home</a>
-              <a href="#about">About</a>
-              <a href="#menu">Menu</a>
-              <a href="#offers">Offers</a>
-              <a href="#contact">Contact</a>
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Menu</a>
+              <a href="#">Offers</a>
+              <a href="#">Contact</a>
             </div>
           </div>
 

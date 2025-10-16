@@ -19,10 +19,10 @@ const Header = () => {
         <div className={`nav-items ${isMenuOpen ? 'active' : ''}`}>
           <ul>
             {/* Internal sections use regular anchor tags */}
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#Menu">Menu</a></li>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Contact">Contact</a></li>
+            <li><Link to="/Home">Home</Link></li>
+            <li><Link to="/Menu">Menu</Link></li>
+            <li><Link to="/About">About</Link></li>
+            <li><Link to="/Contact">Contact</Link></li>
 
             {/* Routes use Link components */}
             <li><Link to="/Offers">Offers</Link></li>

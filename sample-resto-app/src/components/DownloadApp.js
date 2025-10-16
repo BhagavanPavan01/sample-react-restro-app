@@ -1,7 +1,7 @@
 
 const DownloadApp = () => {
   return (
-    <section className="download-app" id="About">
+    <section className="download-app">
       <div className="container">
         <div className="app-content">
           <div className="app-info">
